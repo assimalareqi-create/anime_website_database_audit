@@ -1,0 +1,1010 @@
+<?php
+/**
+ * ملف CSS الرئيسي للموقع
+ */
+?>
+/* ===== المتغيرات العامة ===== */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --border-color: #dee2e6;
+    --card-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --transition-speed: 0.3s;
+}
+
+/* ===== الأنماط العامة ===== */
+body {
+    font-family: 'Cairo', sans-serif;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+.section-padding {
+    padding: 3rem 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.section-link {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* ===== الهيدر والناف بار ===== */
+.main-header {
+    margin-bottom: 1rem;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+/* ===== قسم البانر الرئيسي ===== */
+.hero-section {
+    margin-bottom: 2rem;
+}
+
+.hero-slide {
+    position: relative;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0) 100%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-meta {
+    margin-bottom: 1rem;
+}
+
+.hero-buttons {
+    margin-top: 1.5rem;
+}
+
+/* ===== بطاقات الأنمي ===== */
+.anime-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    height: 100%;
+}
+
+.anime-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.anime-thumbnail {
+    position: relative;
+    overflow: hidden;
+    padding-top: 150%; /* نسبة العرض إلى الارتفاع 2:3 */
+}
+
+.anime-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.anime-card:hover .anime-thumbnail img {
+    transform: scale(1.05);
+}
+
+.anime-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1rem;
+    color: #fff;
+}
+
+.anime-status {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.anime-episodes {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.anime-info {
+    padding: 1rem;
+}
+
+.anime-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    height: 2.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.anime-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* ===== بطاقات الحلقات ===== */
+.episode-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    height: 100%;
+}
+
+.episode-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.episode-thumbnail {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* نسبة العرض إلى الارتفاع 16:9 */
+}
+
+.episode-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+}
+
+.episode-card:hover .episode-thumbnail img {
+    transform: scale(1.05);
+}
+
+.episode-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.episode-card:hover .episode-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.episode-info {
+    padding: 1rem;
+}
+
+.episode-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    height: 2.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.anime-title {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.episode-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+/* ===== صفحة تفاصيل الأنمي ===== */
+.anime-banner {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 3rem 0;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.anime-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.anime-banner-content {
+    position: relative;
+    z-index: 1;
+}
+
+.anime-poster {
+    position: relative;
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+.anime-poster img {
+    width: 100%;
+    height: auto;
+}
+
+.anime-description {
+    white-space: pre-line;
+}
+
+.anime-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.anime-info-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+}
+
+.anime-info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-weight: 600;
+    width: 40%;
+}
+
+.info-value {
+    width: 60%;
+}
+
+.episodes-grid {
+    margin: 0 -0.5rem;
+}
+
+.episode-item {
+    padding: 0.5rem;
+    transition: transform var(--transition-speed) ease;
+}
+
+.episode-item:hover {
+    transform: translateY(-5px);
+}
+
+.episode-link {
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.similar-anime-item {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.similar-anime-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.similar-anime-link {
+    display: block;
+    color: inherit;
+}
+
+.similar-anime-info {
+    padding: 0 1rem;
+}
+
+.similar-anime-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.similar-anime-meta {
+    font-size: 0.75rem;
+    color: #6c757d;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===== صفحة مشاهدة الحلقة ===== */
+.video-player-section {
+    background-color: #000;
+    padding: 2rem 0;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.episodes-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.episode-list-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-color);
+    color: inherit;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.episode-list-item:last-child {
+    border-bottom: none;
+}
+
+.episode-list-item:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.episode-list-item.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.episode-number {
+    font-weight: 600;
+}
+
+/* ===== التعليقات ===== */
+.comments-list {
+    margin-top: 2rem;
+}
+
+.comment-item {
+    display: flex;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comment-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.comment-avatar {
+    width: 50px;
+    height: 50px;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.default-avatar {
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex-grow: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.comment-date {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+
+.comment-text {
+    font-size: 0.875rem;
+    white-space: pre-line;
+}
+
+/* ===== التصنيفات ===== */
+.genres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.genre-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border-radius: 50px;
+    color: var(--text-color);
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.genre-badge:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.genre-count {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 50px;
+    padding: 0.1rem 0.5rem;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+.more-genres {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* ===== البحث المتقدم ===== */
+.search-results-header {
+    margin-bottom: 1.5rem;
+}
+
+.search-count {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.search-filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+.filter-remove {
+    margin-right: 0.5rem;
+    color: #6c757d;
+}
+
+.clear-all {
+    background-color: var(--secondary-color);
+}
+
+.clear-all a {
+    color: #fff;
+}
+
+/* ===== قائمة المتابعة ===== */
+.watchlist-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    height: 100%;
+}
+
+.watchlist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.watchlist-content {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.watchlist-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.watchlist-meta {
+    font-size: 0.875rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+.watchlist-actions {
+    margin-top: auto;
+}
+
+.new-episodes-badge {
+    margin-top: 0.5rem;
+}
+
+/* ===== الفوتر ===== */
+.footer-links li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-contact li {
+    margin-bottom: 0.5rem;
+}
+
+/* ===== التكيف مع الشاشات الصغيرة ===== */
+@media (max-width: 767.98px) {
+    .hero-slide {
+        height: 400px;
+    }
+    
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .anime-banner {
+        padding: 2rem 0;
+    }
+    
+    .anime-poster {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-slide {
+        height: 300px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.25rem;
+    }
+}
+
+/* ===== تخصيص مشغل الفيديو ===== */
+.video-js {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%; /* نسبة العرض إلى الارتفاع 16:9 */
+}
+
+.vjs-fluid {
+    padding-top: 0 !important;
+    height: 100% !important;
+}
+
+.vjs-poster {
+    background-size: cover;
+}
+
+.vjs-big-play-button {
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+}
+
+/* ===== تخصيص نجوم التقييم ===== */
+.rating-stars {
+    color: #f39c12;
+}
+
+.rating-stars-input {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.star-rating {
+    margin: 0 0.1rem;
+    cursor: pointer;
+}
+
+/* ===== تنسيق لوحة التحكم ===== */
+.admin-sidebar {
+    min-height: calc(100vh - 56px);
+    background-color: var(--secondary-color);
+}
+
+.admin-sidebar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.75rem 1rem;
+    border-radius: 0;
+}
+
+.admin-sidebar .nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar .nav-link.active {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.admin-sidebar .nav-link i {
+    margin-left: 0.5rem;
+    width: 1.25rem;
+    text-align: center;
+}
+
+.admin-content {
+    padding: 1.5rem;
+}
+
+.admin-card {
+    border: none;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.admin-card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.admin-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.admin-card-count {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+/* ===== تنسيق نموذج تسجيل الدخول والتسجيل ===== */
+.auth-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.auth-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.875rem;
+}
+
+/* ===== تنسيق الصفحة الشخصية ===== */
+.profile-header {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.profile-role {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #6c757d;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* ===== تنسيق الرسائل ===== */
+.alert {
+    border-radius: 8px;
+    border: none;
+    box-shadow: var(--card-shadow);
+}
+
+/* ===== تنسيق الأزرار ===== */
+.btn {
+    border-radius: 4px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-secondary:hover {
+    background-color: #1a252f;
+    border-color: #1a252f;
+}
+
+/* ===== تنسيق الجداول ===== */
+.table {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== تنسيق التقسيم إلى صفحات ===== */
+.pagination {
+    margin-bottom: 0;
+}
+
+.page-link {
+    color: var(--primary-color);
+    border-color: var(--border-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* ===== تنسيق النماذج ===== */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+}
+
+/* ===== تنسيق البطاقات ===== */
+.card {
+    border-radius: 8px;
+    border: none;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem;
+}
+
+.card-title {
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+/* ===== تنسيق الشريط الجانبي ===== */
+.sidebar-sticky {
+    position: sticky;
+    top: 1rem;
+}
+
+/* ===== تنسيق الصور ===== */
+.img-thumbnail {
+    border-radius: 8px;
+}
+
+/* ===== تنسيق الخط ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
